@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products JSON</title>
+</head>
+<body>
+    <script>
+        // Global variable containing product data in JSON format
+        const products = [
+            {
+                "name": "Sweatshirt",
+                "description": "Green hooded sweatshirt",
+                "price": 35,
+                "categories": ["clothing", "winter wear"]
+            },
+            {
+                "name": "Gloves",
+                "description": "Cotton black gloves",
+                "price": 20,
+                "categories": ["clothing", "winter wear"]
+            },
+            {
+                "name": "Wallet",
+                "description": "Black leather wallet",
+                "price": 50,
+                "categories": ["accessories"]
+            },
+            {
+                "name": "Sunglasses",
+                "description": "Rayband brown sunglasses",
+                "price": 60,
+                "categories": ["accessories"]
+            },
+            {
+                "name": "Watch",
+                "description": "Black sleek watch",
+                "price": 15,
+                "categories": ["accessories"]
+            },
+            {
+                "name": "Running Shoes",
+                "description": "Lightweight and comfortable running shoes",
+                "price": 70,
+                "categories": ["clothing"]
+            },
+            {
+                "name": "Chips",
+                "description": "Lays Potato chips",
+                "price": 2,
+                "categories": ["snack"]
+            },
+            {
+                "name": "Granola Bar",
+                "description": "Energy Granola bar for hiking",
+                "price": 3,
+                "categories": ["snack"]
+            }
+        ];
+
+        document.write("<pre>" + JSON.stringify(products, null, 4) + "</pre>");
+    </script>
+</body>
+</html>
