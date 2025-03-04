@@ -7,27 +7,27 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            //font-family: Arial, sans-serif;
             margin: 20px;
         }
         .product-name {
             font-size: 18px;
             margin: 5px 0;
-            color: #0073e6;
+            color: #black;
         }
         button, select {
             padding: 10px;
             margin: 10px 5px;
             border-radius: 5px;
-            border: 1px solid #ddd;
+            border: 1px solid #black;
             cursor: pointer;
         }
         button {
-            background-color: #0073e6;
+            background-color: #blue;
             color: white;
         }
         button:hover {
-            background-color: #005bb5;
+            background-color: #dark blue;
         }
     </style>
 </head>
@@ -47,7 +47,6 @@
                     products = data;
                     categories.clear();
                     data.forEach(product => product.categories.forEach(cat => categories.add(cat)));
-                    
                     let categoryOptions = '<option value="">Select a category</option>';
                     categories.forEach(cat => categoryOptions += `<option value="${cat}">${cat}</option>`);
                     $("#categoryFilter").html(categoryOptions);
