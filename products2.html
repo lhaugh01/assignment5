@@ -1,45 +1,31 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products JSON Display</title>
+    <title>Filter Products</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 20px;
         }
-        .product {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-        .product h2 {
-            margin: 0;
-            color: #333;
-        }
-        .product p {
+        .product-name {
+            font-size: 18px;
             margin: 5px 0;
-            color: #555;
+            color: #black;
         }
-        .categories {
-            font-weight: bold;
-            color: #0073e6;
+        button, select {
+            padding: 10px;
+            margin: 10px 5px;
+            border-radius: 5px;
+            border: 1px solid black;
+            cursor: pointer;
         }
         button {
-            padding: 10px 15px;
-            background-color: #0073e6;
+            background-color: blue;
             color: white;
-            border: none;
-            cursor: pointer;
-            margin-bottom: 15px;
-            border-radius: 5px;
         }
         button:hover {
-            background-color: #005bb5;
+            background-color: darkblue;
         }
     </style>
 </head>
