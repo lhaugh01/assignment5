@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products JSON Display</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .product h2 {
+            margin: 0;
+            color: #333;
+        }
+        .product p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .categories {
+            font-weight: bold;
+            color: #0073e6;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+    <button id="loadProducts">Load Products</button>
+    <div id="result"></div>
+
+    <script>
+        $(document).ready(function() {
+            $("#loadProducts").click(function() {
+                $.get("products.json", function(data) {
+                    let output = "";
+                    data.forEach(product => {
+                        output += `
+                            <div class="product">
+                                <h2>${product.name}</h2>
+                                <p>${product.description}</p>
+                                <p><strong>Price:</strong> $${product.price}</p>
+                                <p class="categories"><strong>Categories:</strong> ${product.categories.join(", ")}</p>
+                            </div>
+                        `;
+                    });
+                    $("#result").html(output);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
