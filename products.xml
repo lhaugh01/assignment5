@@ -1,1 +1,54 @@
 
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product>
+        <name>Sweatshirt</name>
+        <description>Green hooded sweatshirt</description>
+        <price>35</price>
+        <category>clothing</category>
+        <category>winter wear</category>
+    </product>
+    <product>
+        <name>Gloves</name>
+        <description>Cotton black gloves</description>
+        <price>20</price>
+        <category>clothing</category>
+        <category>winter wear</category>
+    </product>
+    <product>
+        <name>Wallet</name>
+        <description>Black leather wallet</description>
+        <price>50</price>
+        <category>accessories</category>
+    </product>
+    <product>
+        <name>Sunglasses</name>
+        <description>Rayband brown sunglasses</description>
+        <price>60</price>
+        <category>accessories</category>
+    </product>
+    <product>
+        <name>Watch</name>
+        <description>Black sleek watch</description>
+        <price>15</price>
+        <category>accessories</category>
+    </product>
+    <product>
+        <name>Running Shoes</name>
+        <description>Lightweight and comfortable running shoes</description>
+        <price>70</price>
+        <category>clothing</category>
+    </product>
+    <product>
+        <name>Chips</name>
+        <description>Lays Potato chips</description>
+        <price>2</price>
+        <category>snack</category>
+    </product>
+    <product>
+        <name>Granola Bar</name>
+        <description>Energy Granola bar for hiking</description>
+        <price>3</price>
+        <category>snack</category>
+    </product>
+</products>
