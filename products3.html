@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Products</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .product-name {
+            font-size: 18px;
+            margin: 5px 0;
+            color: #0073e6;
+        }
+        button, select {
+            padding: 10px;
+            margin: 10px 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+        button {
+            background-color: #0073e6;
+            color: white;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+<body>
+    <button id="loadProducts">Load Products</button>
+    <select id="categoryFilter"></select>
+    <button id="filterProducts">Filter</button>
+    <div id="result"></div>
+
+    <script>
+        let products = [];
+        let categories = new Set();
+
+        $(document).ready(function() {
+            $("#loadProducts").click(function() {
+                $.get("products.json", function(data) {
+                    products = data;
+                    categories.clear();
+                    data.forEach(product => product.categories.forEach(cat => categories.add(cat)));
+                    
+                    let categoryOptions = '<option value="">Select a category</option>';
+                    categories.forEach(cat => categoryOptions += `<option value="${cat}">${cat}</option>`);
+                    $("#categoryFilter").html(categoryOptions);
+                });
+            });
+
+            $("#filterProducts").click(function() {
+                let selectedCategory = $("#categoryFilter").val();
+                let output = "";
+                
+                if (selectedCategory) {
+                    products.forEach(product => {
+                        if (product.categories.includes(selectedCategory)) {
+                            output += `<div class="product-name">${product.name}</div>`;
+                        }
+                    });
+                }
+                $("#result").html(output || "<p>No products found in this category.</p>");
+            });
+        });
+    </script>
+</body>
+</html>
